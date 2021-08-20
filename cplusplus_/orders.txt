@@ -1,0 +1,2 @@
+python3 gen2.py jasonnb build headers.txt
+g++ -shared -rdynamic -g -O3 -w -fPIC jason.cpp src/jasondemodule.cpp -DMODULE_STR=jasonnb -DMODULE_PREFIX=jasonnb -DNDEBUG -DPY_MAJOR_VERSION=3 `pkg-config --cflags --libs opencv` `python3-config --includes --ldflags` -I . -I/usr/local/lib64/python3.6/site-packages/numpy/core/include -o build/jasonnb.so
